@@ -1,6 +1,6 @@
 # Domänenverständnis
 
-Hier in diesem Repository teilen wir uns Gruppenintern das Domänenverständnis unterinander
+Hier in diesem Repository teilen das Domänenverständnis unterinander und bereiten uns auf die mündlichen Abschlussprüfungen vor. 
 
 ## Sensoren
 
