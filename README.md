@@ -4,6 +4,25 @@ Hier in diesem Repository teilen das Domänenverständnis unterinander und berei
 
 ## Sensoren
 
+### Unkalibrierte Messungen
+
+
+### Beschleunigungsmesser
+
+
+### Gesamtbeschleunigungsmesser
+
+
+### Schwerkraft
+
+
+### Gyroskop
+
+
+### Magnometer
+
+
+### Orientierung
 
 ## Verarbeitung von Signaldaten
 
