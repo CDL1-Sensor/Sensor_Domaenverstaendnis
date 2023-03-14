@@ -5,6 +5,9 @@ Hier in diesem Repository teilen das Domänenverständnis unterinander und berei
 ## Sensoren
 
 ### Unkalibrierte Messungen
+Sensor Logger bietet uns die Möglichkeit, unkalibrierte Rohdaten von Beschleunigungsmesser, Gyroskop und Magnetometer aufzuzeichnen. Ebenfalls werden
+zu den unkalibrierten Rohdaten die "normalen" Daten ebenfalls mit aufgenommen. Sensor Logger selbst gibt uns an, die unkalibrierten Rohdaten nicht zu verwenden.  
+[Sensor Logger auf GitHub](https://github.com/tszheichoi/awesome-sensor-logger/)
 
 
 ### Beschleunigungsmesser
