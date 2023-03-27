@@ -36,6 +36,10 @@ Die Orientierungssensoren verwenden Daten von den Beschleunigungsmessern, um die
 
 ## Deep Learning Modelle
 
+### Tensoren
+
+Tensoren sind mathematische Objekte, die mittels der Grundlagen der linearen Algebra verwendet werden, um mehrere Vektoren oder Matrizen gleichzeitig abzubilden. Ein Tensor kann als multidemensionale erweiterung eines Skalars oder Vektors betrachtet werden. Numpy arrays in Python sind jeweils direkt kompatible Tensor Tensorflow objekte. In Tensorflow werden Tensoren als zentrale Datenstruktur verwendet, um sowohl Eingangsdaten als auch Modellparameter zu speichern. Durch die Verwendung von Tensoren können Deep Learning-Modelle effizient auf GPUs und TPUs ausgeführt werden, um schnelle Trainings- und Vorhersagezeiten zu ermöglichen. Wärend Matrizen nur den 2. Dimensionalen Raum abdecken. Sind Tensoren multidimensional. Auf Tensoren gelten nicht Matrizen Operationen, sondern eigene. (siehe Tensorproduct, Kontraktion und Tensorzerlegung) 
+
 
 ## Klassifikationsmetriken
 
