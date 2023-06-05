@@ -57,7 +57,7 @@ Bemerkung: Achtung, in unserem Fall sind die Train und Test grössen bei jedem S
 
 Auch hier haben wir die Cross Validierung mittels Weights and Bias verfolgt, da wir vom besten Hyperparameter Tuning Modell, mehrere Runs mit unterschiedlichen Split Seeds und Model Seeds verwendet haben, aber die Hyperparameter fixierd haben. Somit konnten wir von unserem besten Modell die Fehler der Metriken, sprich den Mittelwert und die Standardabweichung berechnen und visualisieren. 
 
-### Multiple Logistische Regression
+### [Multiple Logistische Regression](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html)
 
 Beim Baseline Modell, unserer Multiple logsitischen Regression haben wir dafür die kompletten unverarbeiteten Rohdaten genommen. Aufgrund unserer definierten Metrik der Accuracy, afu welche wir optimieren, wurden ein undersampling vom rohdatensatz gemacht bevor das Modell trainiert wurde. Dadurch gab es von jeder Klasse die genau gleiche Anzahl an Observationen, sowohl für den Trainingsdatensatz als auch Testdatensatz. 
 
@@ -70,16 +70,26 @@ Der Trainingsprozess in der OvR-Methode besteht aus folgenden Schritten:
 3) Im zweiten Schritt wird ein Modell trainiert, um die zweite Klasse von den restlichen Klassen zu unterscheiden. Diesmal werden alle Beispiele der zweiten Klasse als positive Beispiele und alle Beispiele der anderen Klassen als negative Beispiele verwendet.
 4) Dieser Prozess wird für jede Klasse wiederholt, bis ein separates binäres Modell für jede Klasse erstellt wurde.
 
-Beim Vorhersageprozess wird dann jedes Modell angewendet, um die Wahrscheinlichkeit zu berechnen, dass eine Eingabe zu dieser spezifischen Klasse gehört. Die Klasse mit der höchsten Wahrscheinlichkeit wird schließlich als Vorhersage ausgewählt.
+Beim Vorhersageprozess wird dann jedes Modell angewendet, um die Wahrscheinlichkeit zu berechnen, dass eine Eingabe zu dieser spezifischen Klasse gehört. Die Klasse mit der höchsten Wahrscheinlichkeit wird schliesslich als Vorhersage ausgewählt.
 
-### Decision Tree Classifier
+### [Decision Tree Classifier](https://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeClassifier.html)
+Der Name Decision Tree leitete sich aus dem Erscheinungsbild ab, welches einem Baum entspricht. Ein Decision Tree besteht aus Wurzeln, Ästen und Blätter, dabei wird der Decision Tree immer von oben nach unten betrachtet. Der Decision Tree ist also hierarchisch aufgebaut. Als Start dient uns ein Wurzelknoten, wird auch Root Node oder Root genannt, diese beinhaltete eine binaere Entscheidung (True oder False) die getroffen wird. Je nachdem, wie die Entscheidung fiel, wandert man einem Pfad bzw. Ast entlang zum naechsten Knotenpunkt, diese wird auch Branches oder Internal Nodes genannt, beim naechsten Knotenpunkt wird wieder eine binaere Entscheidung gefaellt, um einen weiteren Pfad zu nehmen. Dies geschieht solange bis man an das Ende angekommen ist. Das Ende eines Decision Tree nennt man auch Blatt, Leaf Nodes oder Leaf. Haeufig werden Decision Tree verwendet, um Klassifikations Aufgaben zu loesen. Am Ende vom Decision Tree, kann man somit Aussagen treffen, wie bsp. um welches Bewegungsprofil es sich handelt.
+
+Der Decision Tree von Sklearn hat dabei unterschiedliche Parameter, hier werden wir kurz einige beschreiben. 
+
+criterion: Das Kriterium zur Bewertung der Qualität einer Aufteilung. "gini" verwendet den Gini-Index, "entropy" verwendet den Informationsgewinn.   
+max_depth: Die maximale Tiefe des Entscheidungsbaums. Es begrenzt die Anzahl der Entscheidungsknoten im Baum.   
+min_samples_split: Die minimale Anzahl von Datenpunkten, die erforderlich sind, um eine Aufteilung in einen internen Knoten durchzuführen.   
+min_samples_leaf: Die minimale Anzahl von Datenpunkten, die erforderlich sind, um einen Blattknoten zu bilden.   
+max_features: Die maximale Anzahl der Funktionen, die bei der Suche nach der besten Aufteilung berücksichtigt werden.   
+random_state: Der Startwert für die Zufallsgeneratoren zur Wiederholbarkeit der Ergebnisse.   
+Overfitting kann entstehen, wenn man zu viel Branches erstellt und die Daten nicht mehr generalisierbar auf neue Daten sind, um das Overfitting zu vermeiden.   
 
 ### Random Forest Classifier
 
 ### Stochastic Gradient Descent Classifier
 
 ## Deep Learning Modelle
-
 Der Hauptunterschied zwischen Deep Learning und Machine Learning liegt in der Art und Weise, wie diese Ansätze Daten verarbeiten.   
 Während traditionelle Machine-Learning-Methoden manuell entwickelte Merkmale (Features) aus den Daten extrahieren (Aggregation von unseren Sensordaten), sind Deep Learning Modelle in der Lage, automatisch abstrakte Merkmale aus den Rohdaten zu lernen.   
 Dies ermöglicht Deep Learning-Modellen, komplexere Muster und Strukturen in den Daten zu erkennen.  
