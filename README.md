@@ -35,12 +35,26 @@ min, max, mean, median
 
 
 ## Machine Learning Modellen
+Im Bereich des Machine Learning definieren wir eine Zielvariable, die in unserem Fall unsere Bewegungsprofile darstellt. Diese dienen als Zielvariable. Die Eingangsvariablen, also unsere Features, sind die aggregierten Sensordaten.
+Mit Hilfe des Sklearn-Frameworks haben wir verschiedene Machine Learning-Modelle erstellt und unsere Daten darauf trainiert und validiert, um Bewegungsprofile zu generieren.
 
 ### Hyperparameter Tuning mit Weights & Bias
+Da unsere Modelle unterschiedliche Parameter haben können und diese einen grossen Einfluss auf unsere Accuracy hatte, haben wir mittels Weights & Bias Hyperparameter Tuning betrieben. Der Vorteil bei Weights & Bias war, dass wir somit unsere Hyperparameter Tuning live mitverfolgen konnten und somit diverse Hunderte Modelle austesten konnten und deren Metriken berechnen und übersichtlich darstellen. 
+Die Weights & Bias Hyperparameter Tuning sind unter dem folgenden Link zu finden: 
 
 ### Cross Validation
+Die Cross Validation ist ein Verfahren die uns die Fehlerabschätzung unserer Zielmetrik berechnet. Da wir unseren Datensatz aufgrund vom File Namen splitten, um Data Leakage zu verhindern ist, hat der Train - Validation Split einen grossen Einfluss auf unsere Metrik. Der Grund hierfür ist auch, dass ein File unterschiedlich lange sein kann. 
+
+Das Bild verdeutlich das prinzip der Cross Validierung.   
+Bemerkung: Achtung, in unserem Fall sind die Train und Test grössen bei jedem Split unterschiedlich gross.
+
+![image](https://github.com/CDL1-Sensor/Sensor_Domaenverstaendnis/assets/66916399/049467f8-653e-4bf0-9962-a3cc2939fc16)
+
+Auch hier haben wir die Cross Validierung mittels Weights and Bias verfolgt, da wir vom besten Hyperparameter Tuning Modell, mehrere Runs mit unterschiedlichen Split Seeds und Model Seeds verwendet haben, aber die Hyperparameter fixierd haben. Somit konnten wir von unserem besten Modell die Fehler der Metriken, sprich den Mittelwert und die Standardabweichung berechnen und visualisieren. 
 
 ### Multiple Logistische Regression
+
+
 
 ### Decision Tree Classifier
 
@@ -50,7 +64,13 @@ min, max, mean, median
 
 ## Deep Learning Modelle
 
-Im Deep Learning part geht es darum, das unser Modell aus den gegebenen Variabeln die Features selber herausextrahiert. Dabei verwenden wir die Ansätze wie 
+Der Hauptunterschied zwischen Deep Learning und Machine Learning liegt in der Art und Weise, wie diese Ansätze Daten verarbeiten.   
+Während traditionelle Machine-Learning-Methoden manuell entwickelte Merkmale (Features) aus den Daten extrahieren (Aggregation von unseren Sensordaten), sind Deep Learning Modelle in der Lage, automatisch abstrakte Merkmale aus den Rohdaten zu lernen.   
+Dies ermöglicht Deep Learning-Modellen, komplexere Muster und Strukturen in den Daten zu erkennen.  
+
+![image](https://github.com/CDL1-Sensor/Sensor_Domaenverstaendnis/assets/66916399/30bb163a-6e65-48fa-8e64-54fd3e8c9d63)
+
+In unserer Challenge haben wir hauptsächlich nur mit dem Tensorflow Deep Learning Framework auseinandergesetzt.
 
 ### Tensoren
 
