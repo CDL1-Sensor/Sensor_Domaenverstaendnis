@@ -38,7 +38,6 @@ Die ersten und letzten 5 Sekunden ist die Bewegung, dass das Handy in die Hosent
 
 Damit wir mehr Features aus unseren Daten generieren, wurden die Messungen in einem 5 Sekunden Zeitfenster aggregiert. Dabei berücksichtigt wurden die Frequenzen der Messungen. Jede Messung hat mehr oder weniger eine andere Frequenz und musste somit beim aggregieren in 5 Sekunden Zeitfesnter mirberücksichtigt werden. Die Überlappung der Zeitfenster 
 
-
 ## Machine Learning Modellen
 Im Bereich des Machine Learning definieren wir eine Zielvariable, die in unserem Fall unsere Bewegungsprofile darstellt. Diese dienen als Zielvariable. Die Eingangsvariablen, also unsere Features, sind die aggregierten Sensordaten.
 Mit Hilfe des Sklearn-Frameworks haben wir verschiedene Machine Learning-Modelle erstellt und unsere Daten darauf trainiert und validiert, um Bewegungsprofile zu generieren.
@@ -64,7 +63,6 @@ Beim Baseline Modell, unserer Multiple logsitischen Regression haben wir dafür 
 Beim Multiple Logistische Regression klassifizieren wir sechs Target Werte, unsere Bewegungsprofile. Dies geschieht durch unsere Multiple Logsitische Regression und dem Paramater "OvR" welches für One-vs-Rest Methode ist.
 Der Trainingsprozess in der OvR-Methode besteht aus folgenden Schritten:
 
-
 1) Für jede Klasse wird ein separates binäres Modell erstellt.
 2) Im ersten Schritt wird ein Modell trainiert, um die erste Klasse von den restlichen Klassen zu unterscheiden. Dazu werden alle Beispiele der ersten Klasse als positive Beispiele und alle Beispiele der anderen Klassen als negative Beispiele verwendet.
 3) Im zweiten Schritt wird ein Modell trainiert, um die zweite Klasse von den restlichen Klassen zu unterscheiden. Diesmal werden alle Beispiele der zweiten Klasse als positive Beispiele und alle Beispiele der anderen Klassen als negative Beispiele verwendet.
@@ -86,9 +84,34 @@ Der Decision Tree von Sklearn hat dabei unterschiedliche Parameter, hier werden 
 
 Overfitting kann entstehen, wenn man zu viel Branches erstellt und die Daten nicht mehr generalisierbar auf neue Daten sind, um das Overfitting zu vermeiden.   
 
-### Random Forest Classifier
+### [Random Forest Classifier]()
+Ähnlich wie beim Decision Tree besteht auch der Random Forest Classifier aus einer Hierarchie von Wurzeln, Ästen und Blättern, die wie ein Baum strukturiert sind. Jeder Baum im Random Forest wird unabhängig voneinander trainiert, wobei verschiedene Teilmengen der Trainingsdaten zufällig ausgewählt werden.
 
-### Stochastic Gradient Descent Classifier
+Um Vorhersagen zu treffen, werden die Testdaten durch jeden Baum im Random Forest geleitet. Jeder Baum trifft Entscheidungen basierend auf den Merkmalen der Daten und gibt eine Vorhersage aus. Im Fall einer Klassifikationsaufgabe könnte die Vorhersage beispielsweise eine Klasse oder ein Label sein.
+
+Nachdem alle Bäume ihre Vorhersagen gemacht haben, wird eine "Mehrheitsabstimmung" durchgeführt, um die endgültige Vorhersage des Random Forest Classifiers zu ermitteln. Die Klasse, die von den meisten Bäumen vorhergesagt wird, wird als das endgültige Ergebnis ausgewählt.
+
+Der Random Forest Classifier hat verschiedene Parameter, die seine Leistung beeinflussen können:
+
+1) n_estimators: Die Anzahl der Bäume im Random Forest. Eine größere Anzahl von Bäumen kann zu einer besseren Leistung führen, aber auch zu höheren Rechenkosten.
+2) max_features: Die maximale Anzahl von Merkmalen, die bei der Suche nach der besten Aufteilung in jedem Baum berücksichtigt werden. Durch die Begrenzung der Anzahl von Merkmalen kann die Korrelation zwischen den Bäumen verringert und die Vielfalt im Ensemble erhöht werden.
+3) max_depth: Die maximale Tiefe jedes einzelnen Baums im Random Forest. Eine größere Tiefe ermöglicht es den Bäumen, komplexere Muster in den Daten zu lernen, erhöht jedoch auch das Risiko von Overfitting.
+4) min_samples_split: Die minimale Anzahl von Datenpunkten, die erforderlich sind, um eine Aufteilung in einen internen Knoten durchzuführen. Dieser Parameter hilft, Overfitting zu reduzieren, ähnlich wie beim Decision Tree.
+
+Der Random Forest Classifier bietet mehrere Vorteile, darunter die Fähigkeit, mit hoher Genauigkeit komplexe Entscheidungsgrenzen zu erlernen, die Robustheit gegenüber Ausreißern und fehlenden Daten und die Fähigkeit, die Bedeutung der Merkmale zu bewerten. Durch den Einsatz von zufälligen Teilmengen der Daten und Merkmale hilft der Random Forest auch, Overfitting zu reduzieren und eine bessere Generalisierung auf neuen Daten zu erzielen
+
+### [Stochastic Gradient Descent Classifier](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.SGDClassifier.html#sklearn.linear_model.SGDClassifier)
+Der SGD Classifier verwendet eine lineare Entscheidungsgrenze, um zwischen verschiedenen Klassen zu unterscheiden. Es handelt sich um einen iterativen Algorithmus, der die Gewichte des linearen Modells schrittweise anpasst, um den Fehler zu minimieren. Der Name "stochastischer Gradientenabstieg" bezieht sich auf die Verwendung von zufällig ausgewählten Teilgruppen von Trainingsdaten, um die Gewichtsaktualisierungen durchzuführen.
+
+Der Algorithmus beginnt mit zufällig initialisierten Gewichten und durchläuft die Trainingsdaten in Iterationen. In jeder Iteration wird eine zufällig ausgewählte Teilmenge der Trainingsdaten verwendet, um die Gewichte zu aktualisieren. Dieser Schritt wird als stochastischer Gradientenabstieg bezeichnet, da die Gewichtsaktualisierungen aufgrund der zufälligen Teilgruppen von Daten stattfinden.
+
+Der SGD Classifier hat verschiedene Parameter, die angepasst werden können, um die Leistung des Modells zu optimieren:
+1) loss: Die Verlustfunktion, die minimiert werden soll. Für Klassifikationsaufgaben kann dies beispielsweise die logistische Verlustfunktion (log loss) oder die hinge-Verlustfunktion sein.
+2) alpha: Der Regularisierungsparameter, der die Stärke der Regularisierung steuert. Die Regularisierung hilft, Overfitting zu reduzieren, indem sie die Größe der Gewichte begrenzt.
+Der SGD Classifier bietet mehrere Vorteile, darunter seine Fähigkeit zur effizienten Verarbeitung großer Datensätze und die Anpassungsfähigkeit an Online-Lernszenarien, bei denen neue Daten schrittweise eingeführt werden. Es kann auch mit sparse Daten umgehen, bei denen viele Merkmale den Wert Null haben. Der SGD Classifier ist jedoch anfällig für das Einstranden in lokale Minima und kann empfindlich auf die Wahl der Hyperparameter reagieren.
+
+Insgesamt ist der SGD Classifier ein flexibler und effizienter Algorithmus für lineare Klassifikationsaufgaben, der in vielen Anwendungen erfolgreich eingesetzt werden kann.
+
 
 ## Deep Learning Modelle
 Der Hauptunterschied zwischen Deep Learning und Machine Learning liegt in der Art und Weise, wie diese Ansätze Daten verarbeiten.   
