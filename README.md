@@ -42,7 +42,7 @@ Damit wir mehr Features aus unseren Daten generieren, wurden die Messungen in ei
 Im Bereich des Machine Learning definieren wir eine Zielvariable, die in unserem Fall unsere Bewegungsprofile darstellt. Diese dienen als Zielvariable. Die Eingangsvariablen, also unsere Features, sind die aggregierten Sensordaten.
 Mit Hilfe des Sklearn-Frameworks haben wir verschiedene Machine Learning-Modelle erstellt und unsere Daten darauf trainiert und validiert, um Bewegungsprofile zu generieren.
 
-### Hyperparameter Tuning mit Weights & Bias
+### [Hyperparameter Tuning mit Weights & Bias](https://wandb.ai/fhnw-cdl1/projects)
 Da unsere Modelle unterschiedliche Parameter haben können und diese einen grossen Einfluss auf unsere Accuracy hatte, haben wir mittels Weights & Bias Hyperparameter Tuning betrieben. Der Vorteil bei Weights & Bias war, dass wir somit unsere Hyperparameter Tuning live mitverfolgen konnten und somit diverse Hunderte Modelle austesten konnten und deren Metriken berechnen und übersichtlich darstellen. 
 Die Weights & Bias Hyperparameter Tuning sind unter dem folgenden Link zu finden: 
 
