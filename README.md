@@ -77,12 +77,13 @@ Der Name Decision Tree leitete sich aus dem Erscheinungsbild ab, welches einem B
 
 Der Decision Tree von Sklearn hat dabei unterschiedliche Parameter, hier werden wir kurz einige beschreiben. 
 
-criterion: Das Kriterium zur Bewertung der Qualität einer Aufteilung. "gini" verwendet den Gini-Index, "entropy" verwendet den Informationsgewinn.   
-max_depth: Die maximale Tiefe des Entscheidungsbaums. Es begrenzt die Anzahl der Entscheidungsknoten im Baum.   
-min_samples_split: Die minimale Anzahl von Datenpunkten, die erforderlich sind, um eine Aufteilung in einen internen Knoten durchzuführen.   
-min_samples_leaf: Die minimale Anzahl von Datenpunkten, die erforderlich sind, um einen Blattknoten zu bilden.   
-max_features: Die maximale Anzahl der Funktionen, die bei der Suche nach der besten Aufteilung berücksichtigt werden.   
-random_state: Der Startwert für die Zufallsgeneratoren zur Wiederholbarkeit der Ergebnisse.   
+1) criterion: Das Kriterium zur Bewertung der Qualität einer Aufteilung. "gini" verwendet den Gini-Index, "entropy" verwendet den Informationsgewinn.   
+2) max_depth: Die maximale Tiefe des Entscheidungsbaums. Es begrenzt die Anzahl der Entscheidungsknoten im Baum.   
+3) min_samples_split: Die minimale Anzahl von Datenpunkten, die erforderlich sind, um eine Aufteilung in einen internen Knoten durchzuführen.   
+4) min_samples_leaf: Die minimale Anzahl von Datenpunkten, die erforderlich sind, um einen Blattknoten zu bilden.   
+5) max_features: Die maximale Anzahl der Funktionen, die bei der Suche nach der besten Aufteilung berücksichtigt werden.   
+6) random_state: Der Startwert für die Zufallsgeneratoren zur Wiederholbarkeit der Ergebnisse.   
+
 Overfitting kann entstehen, wenn man zu viel Branches erstellt und die Daten nicht mehr generalisierbar auf neue Daten sind, um das Overfitting zu vermeiden.   
 
 ### Random Forest Classifier
