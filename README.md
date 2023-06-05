@@ -94,6 +94,8 @@ Tensoren sind mathematische Objekte, die mittels der Grundlagen der linearen Alg
 
 ### Convolutional Neural Network (CNN)
 
+Das Convlolutional Neural Network kann man sich wie ein Filter vorstellen, der durch die Daten bzw. Vektoren geht und jeweils den nur einen Teilbereich aus dem Vektor sich betrachtet und diese mit dem Filter multipliziert. 
+
 ### Recurrent Neural Network (RNN)
 
 ### Long short-term memory (LSTM) 
@@ -102,7 +104,7 @@ LSTM ist eine Erweiterung von einem RNN
 ## Klassifikationsmetriken
 
 Damit wir wissen wie gut unsere Klassfikationsmodelle performen benötigen wir eine sogenannte Performance Metriken, die uns sagen, wie gut das erstellte Modell tatsächlich auf den Testdaten performt.
-Bei den Klassifikationen von Bewegungsprofilen nutzen wir daher die Metriken: Accuracy, Recall, Precision, F1-Score. 
+Bei den Klassifikationen von Bewegungsprofilen nutzen wir daher die Metriken: Accuracy, Recall, Precision, F1-Score und loggen jeweils die Trainings und Test Werte ins Weight and Bias mit. 
 
 ### Confusion Matrix
 
@@ -113,7 +115,7 @@ Bei den Klassifikationen von Bewegungsprofilen nutzen wir daher die Metriken: Ac
 
 ### Accuracy
 
-DIe Accuracy ist ein
+Die Accuracy berechnet man indem man alle True Positiv Klassifizierten Werte dividiert durch alle gesamten Werte. Die Accuracy sagt dabei aus, wie gut das Modell overall performt. Dabei wichtig zu beachten ist jedoch, dass eine Klassenimbalance die Metrik verzerren kann. 
 
 ### Recall
 
