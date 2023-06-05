@@ -93,12 +93,12 @@ Nachdem alle Bäume ihre Vorhersagen gemacht haben, wird eine "Mehrheitsabstimmu
 
 Der Random Forest Classifier hat verschiedene Parameter, die seine Leistung beeinflussen können:
 
-1) n_estimators: Die Anzahl der Bäume im Random Forest. Eine größere Anzahl von Bäumen kann zu einer besseren Leistung führen, aber auch zu höheren Rechenkosten.
+1) n_estimators: Die Anzahl der Bäume im Random Forest. Eine grössere Anzahl von Bäumen kann zu einer besseren Leistung führen, aber auch zu höheren Rechenkosten.
 2) max_features: Die maximale Anzahl von Merkmalen, die bei der Suche nach der besten Aufteilung in jedem Baum berücksichtigt werden. Durch die Begrenzung der Anzahl von Merkmalen kann die Korrelation zwischen den Bäumen verringert und die Vielfalt im Ensemble erhöht werden.
-3) max_depth: Die maximale Tiefe jedes einzelnen Baums im Random Forest. Eine größere Tiefe ermöglicht es den Bäumen, komplexere Muster in den Daten zu lernen, erhöht jedoch auch das Risiko von Overfitting.
+3) max_depth: Die maximale Tiefe jedes einzelnen Baums im Random Forest. Eine grössere Tiefe ermöglicht es den Bäumen, komplexere Muster in den Daten zu lernen, erhöht jedoch auch das Risiko von Overfitting.
 4) min_samples_split: Die minimale Anzahl von Datenpunkten, die erforderlich sind, um eine Aufteilung in einen internen Knoten durchzuführen. Dieser Parameter hilft, Overfitting zu reduzieren, ähnlich wie beim Decision Tree.
 
-Der Random Forest Classifier bietet mehrere Vorteile, darunter die Fähigkeit, mit hoher Genauigkeit komplexe Entscheidungsgrenzen zu erlernen, die Robustheit gegenüber Ausreißern und fehlenden Daten und die Fähigkeit, die Bedeutung der Merkmale zu bewerten. Durch den Einsatz von zufälligen Teilmengen der Daten und Merkmale hilft der Random Forest auch, Overfitting zu reduzieren und eine bessere Generalisierung auf neuen Daten zu erzielen
+Der Random Forest Classifier bietet mehrere Vorteile, darunter die Fähigkeit, mit hoher Genauigkeit komplexe Entscheidungsgrenzen zu erlernen, die Robustheit gegenüber Ausreissern und fehlenden Daten und die Fähigkeit, die Bedeutung der Merkmale zu bewerten. Durch den Einsatz von zufälligen Teilmengen der Daten und Merkmale hilft der Random Forest auch, Overfitting zu reduzieren und eine bessere Generalisierung auf neuen Daten zu erzielen
 
 ### [Stochastic Gradient Descent Classifier](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.SGDClassifier.html#sklearn.linear_model.SGDClassifier)
 Der SGD Classifier verwendet eine lineare Entscheidungsgrenze, um zwischen verschiedenen Klassen zu unterscheiden. Es handelt sich um einen iterativen Algorithmus, der die Gewichte des linearen Modells schrittweise anpasst, um den Fehler zu minimieren. Der Name "stochastischer Gradientenabstieg" bezieht sich auf die Verwendung von zufällig ausgewählten Teilgruppen von Trainingsdaten, um die Gewichtsaktualisierungen durchzuführen.
@@ -107,11 +107,10 @@ Der Algorithmus beginnt mit zufällig initialisierten Gewichten und durchläuft 
 
 Der SGD Classifier hat verschiedene Parameter, die angepasst werden können, um die Leistung des Modells zu optimieren:
 1) loss: Die Verlustfunktion, die minimiert werden soll. Für Klassifikationsaufgaben kann dies beispielsweise die logistische Verlustfunktion (log loss) oder die hinge-Verlustfunktion sein.
-2) alpha: Der Regularisierungsparameter, der die Stärke der Regularisierung steuert. Die Regularisierung hilft, Overfitting zu reduzieren, indem sie die Größe der Gewichte begrenzt.
-Der SGD Classifier bietet mehrere Vorteile, darunter seine Fähigkeit zur effizienten Verarbeitung großer Datensätze und die Anpassungsfähigkeit an Online-Lernszenarien, bei denen neue Daten schrittweise eingeführt werden. Es kann auch mit sparse Daten umgehen, bei denen viele Merkmale den Wert Null haben. Der SGD Classifier ist jedoch anfällig für das Einstranden in lokale Minima und kann empfindlich auf die Wahl der Hyperparameter reagieren.
+2) alpha: Der Regularisierungsparameter, der die Stärke der Regularisierung steuert. Die Regularisierung hilft, Overfitting zu reduzieren, indem sie die Grösse der Gewichte begrenzt.
+Der SGD Classifier bietet mehrere Vorteile, darunter seine Fähigkeit zur effizienten Verarbeitung grosser Datensätze und die Anpassungsfähigkeit an Online-Lernszenarien, bei denen neue Daten schrittweise eingeführt werden. Es kann auch mit sparse Daten umgehen, bei denen viele Merkmale den Wert Null haben. Der SGD Classifier ist jedoch anfällig für das Einstranden in lokale Minima und kann empfindlich auf die Wahl der Hyperparameter reagieren.
 
 Insgesamt ist der SGD Classifier ein flexibler und effizienter Algorithmus für lineare Klassifikationsaufgaben, der in vielen Anwendungen erfolgreich eingesetzt werden kann.
-
 
 ## Deep Learning Modelle
 Der Hauptunterschied zwischen Deep Learning und Machine Learning liegt in der Art und Weise, wie diese Ansätze Daten verarbeiten.   
@@ -142,32 +141,19 @@ Bei den Klassifikationen von Bewegungsprofilen nutzen wir daher die Metriken: Ac
 
 ### Confusion Matrix
 
-|                     | Wahrheit: Positiv   | Wahrheit: Negativ   |
-|---------------------|---------------------|---------------------|
-| Vorhersage: Positiv | True Positiv (TP)   | False Positiv (FP)  |
-| Vorhersage: Negativ | False Negativ (FN)  | True Negativ (TN)   |
+![image](https://github.com/CDL1-Sensor/Sensor_Domaenverstaendnis/assets/66916399/bf621036-9337-4c70-81ad-9fa7131f6828)
 
 ### Accuracy
-
-Die Accuracy berechnet man indem man alle True Positiv Klassifizierten Werte dividiert durch alle gesamten Werte. Die Accuracy sagt dabei aus, wie gut das Modell overall performt. Dabei wichtig zu beachten ist jedoch, dass eine Klassenimbalance die Metrik verzerren kann. 
+Wenn man ein Modell entwickelt hat, das Bewegungsprofile von Personen in verschiedene Aktivitäten wie Gehen, Laufen und Radfahren klassifiziert, ist die Accuracy eine geeignete Metrik, um die Gesamtleistung des Modells zu bewerten. Man kann die Accuracy verwenden, um zu messen, wie gut das Modell insgesamt in der Lage ist, die Aktivitäten korrekt zu identifizieren.
 
 ### Recall
-
+Möchte man sicherstellen, dass alle Fälle einer bestimmten Aktivität richtig erkannt werden, könnte der Recall eine wichtige Metrik sein. Zum Beispiel, wenn es darum geht, Stürze bei älteren Menschen zu erkennen, ist es entscheidend, dass das Modell alle Sturzereignisse richtig identifiziert, um rechtzeitig Hilfe zu leisten. In diesem Fall wäre der Recall eine relevante Metrik, um die Erkennungsrate von Stürzen zu bewerten.
 
 ### Precision
-
+Die Präzision gibt an, wie gut ein Modell darin ist, wahre positive Ergebnisse von falsch positiven Ergebnissen zu unterscheiden. Ein hohes Präzisionsniveau bedeutet, dass das Modell eine geringe Anzahl von falsch positiven Vorhersagen hat, während ein niedriges Präzisionsniveau darauf hinweist, dass das Modell viele falsch positive Vorhersagen macht.
 
 ### F1-Score
-
-Der F1-Score ist der Harmonische Mittelwert von Recall und Precision.  
-Wichtig bei einer Multiklass Klassifikation ist, dass wir nicht nur einen F1-Score bzw. einen Recall und Precision erhalten sondern mehrer. Aus diesem Grund gibt es verschiedene Mittelwerte die wir bei F1-Score nehmen können. F1-Score Macro, F1-Score Micro, F1-Score Average, F1-Score Weighted
-
-#### F1-Score Weighted
-
-
-
-### 
-
+Der F1-Score ist eine geeignete Metrik, wenn man eine ausgewogene Bewertung der Leistung des Modells benötigt, die sowohl Precision als auch Recall berücksichtigt. Wenn man beispielsweise Bewegungsprofile von Personen in Aktivitäten wie Gehen, Laufen und Treppensteigen klassifiziert, möchte man sowohl eine hohe Erkennungsrate der Aktivitäten als auch eine genaue Klassifizierung sicherstellen, um Verletzungen zu vermeiden. Der F1-Score gibt eine ausgewogene Einschätzung der Gesamtleistung des Modells in Bezug auf Precision und Recall.
 
 ## Applikation
 
