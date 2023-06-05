@@ -27,11 +27,16 @@ Die Orientierungssensoren verwenden Daten von den Beschleunigungsmessern, um die
 
 ## Verarbeitung von Signaldaten
 
+Die Verarberitung der Sensordaten ist wichtig, damit unsere Modelle auch richtig und gute vorhhersagen machen können. Damit diese besser ist, wurden die Daten getrimmt und Aggregiert.
+
 ### Trimmen 
-die ersten 5 sec schneiden
+
+Von Jeder Messung haben wir die ersten und letzten 5 Sekunden abgeschnitten. Denn gemäss der Vereinbaerung, wie man die Sensordaten aufnehmen sollte, sind die ersten 5 Sekunden und die letzten 5 Sekunden irreleveant für das Bewegungsprofil.
+Die ersten und letzten 5 Sekunden ist die Bewegung, dass das Handy in die Hosentasche.
 
 ### Aggregation in 5 Sekunden Fenster
-min, max, mean, median
+
+Damit wir mehr Features aus unseren Daten generieren, wurden die Messungen in einem 5 Sekunden Zeitfenster aggregiert. Dabei berücksichtigt wurden die Frequenzen der Messungen. Jede Messung hat mehr oder weniger eine andere Frequenz und musste somit beim aggregieren in 5 Sekunden Zeitfesnter mirberücksichtigt werden. Die Überlappung der Zeitfenster 
 
 
 ## Machine Learning Modellen
@@ -54,7 +59,18 @@ Auch hier haben wir die Cross Validierung mittels Weights and Bias verfolgt, da 
 
 ### Multiple Logistische Regression
 
+Beim Baseline Modell, unserer Multiple logsitischen Regression haben wir dafür die kompletten unverarbeiteten Rohdaten genommen. Aufgrund unserer definierten Metrik der Accuracy, afu welche wir optimieren, wurden ein undersampling vom rohdatensatz gemacht bevor das Modell trainiert wurde. Dadurch gab es von jeder Klasse die genau gleiche Anzahl an Observationen, sowohl für den Trainingsdatensatz als auch Testdatensatz. 
 
+Beim Multiple Logistische Regression klassifizieren wir sechs Target Werte, unsere Bewegungsprofile. Dies geschieht durch unsere Multiple Logsitische Regression und dem Paramater "OvR" welches für One-vs-Rest Methode ist.
+Der Trainingsprozess in der OvR-Methode besteht aus folgenden Schritten:
+
+
+1) Für jede Klasse wird ein separates binäres Modell erstellt.
+2) Im ersten Schritt wird ein Modell trainiert, um die erste Klasse von den restlichen Klassen zu unterscheiden. Dazu werden alle Beispiele der ersten Klasse als positive Beispiele und alle Beispiele der anderen Klassen als negative Beispiele verwendet.
+3) Im zweiten Schritt wird ein Modell trainiert, um die zweite Klasse von den restlichen Klassen zu unterscheiden. Diesmal werden alle Beispiele der zweiten Klasse als positive Beispiele und alle Beispiele der anderen Klassen als negative Beispiele verwendet.
+4) Dieser Prozess wird für jede Klasse wiederholt, bis ein separates binäres Modell für jede Klasse erstellt wurde.
+
+Beim Vorhersageprozess wird dann jedes Modell angewendet, um die Wahrscheinlichkeit zu berechnen, dass eine Eingabe zu dieser spezifischen Klasse gehört. Die Klasse mit der höchsten Wahrscheinlichkeit wird schließlich als Vorhersage ausgewählt.
 
 ### Decision Tree Classifier
 
