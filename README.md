@@ -157,3 +157,13 @@ Der F1-Score ist eine geeignete Metrik, wenn man eine ausgewogene Bewertung der 
 
 ## Applikation
 
+
+
+# Mögliche Fragestellungen für die Verteidigung
+## Warum wurde bei ML der aggregierte Datensatz und bei DL der getrimmte Datensatz verwendet?
+
+## Wieso haben wir auf 5 Sekunden Zeitfenster aggregiert? Hätte eine Aggregation auf 1 Sekunde oder 10 Sekunden mehr oder weniger Einfluss?
+
+## Warum gestaltet sich die Klassifikation von Treppenlaufen und Laufen schwierig?
+
+## Wie wurden die sechs Bewegungsprofle definiert und wie man das Handy in der Hosentasche hat? (Ausrictung von Handy)
