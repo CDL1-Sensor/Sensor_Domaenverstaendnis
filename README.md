@@ -127,12 +127,22 @@ Tensoren sind mathematische Objekte, die mittels der Grundlagen der linearen Alg
 
 ### Convolutional Neural Network (CNN)
 
-Das Convlolutional Neural Network kann man sich wie ein Filter vorstellen, der durch die Daten bzw. Vektoren geht und jeweils den nur einen Teilbereich aus dem Vektor sich betrachtet und diese mit dem Filter multipliziert. 
+CNNs werden im Modul Deep Learning behandelt. 
+Das Convlolutional Neural Network kann man sich wie ein Filter vorstellen, der durch die Daten bzw. Vektoren geht und jeweils nur einen Teilbereich aus dem Vektor sich betrachtet und diese mit dem Filter multipliziert. 
+
+Die Prinzipien eines CNN werden in diesem Video hier gut erklärt: [Convolutional Neural Networks](https://www.youtube.com/watch?v=HGwBXDKFk9I&t=63s)
 
 ### Recurrent Neural Network (RNN)
 
+RNN (Recurrent Neural Network): Ein rekurrentes neuronales Netzwerk ist ein neuronales Netzwerk, das speziell für die Verarbeitung sequenzieller Daten entwickelt wurde. Es verwendet Rückkopplungsschleifen, um Informationen aus vorherigen Schritten beizubehalten, wodurch es in der Lage ist, den Kontext und die Abhängigkeiten zwischen den verschiedenen Elementen der Sequenz zu berücksichtigen.
+
+Hier ein Video das RNN gut erklärt: [RNN](https://www.youtube.com/watch?v=AsNTP8Kwu80)
+
 ### Long short-term memory (LSTM) 
-LSTM ist eine Erweiterung von einem RNN 
+LSTM ist eine Erweiterung von einem RNN. 
+LSTM ist eine spezielle Art von RNN, die entwickelt wurde, um das Problem des vanishing oder exploing gradient bei der Rückwärtspropagation in tiefen neuronalen Netzen zu lösen. Es verwendet eine zusätzliche Schicht, die als Zellzustand bezeichnet wird, um Informationen über lange Zeiträume zu speichern und zu aktualisieren. Dadurch ist es in der Lage, lange Abhängigkeiten in Sequenzen besser zu erfassen und zu lernen.
+
+Hie ein Video zu LSTM: [LSTM](https://www.youtube.com/watch?v=YCzL96nL7j0&t=863s)
 
 ## Klassifikationsmetriken
 
